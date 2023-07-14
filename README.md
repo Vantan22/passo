@@ -1,4 +1,4 @@
-# passs0
+# Passo
 
 ## Project setup
 ```
