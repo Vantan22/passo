@@ -1,0 +1,43 @@
+//Primary color
+//The primary color is your "brand" color, and is used across all interactive elements such as CTAs, buttons, links, inputs, etc.
+$primary-color-900: #2D2382;
+$primary-color-600: #4E40C4;
+$primary-color-300: #8F7CDB;
+$primary-color-100: #CFC7EF;
+$primary-color-50: #F7F4FF;
+
+//Secondary color
+//The secondary color palette is used alongside the primary to indicate to the secondary focus.
+$secondary-color-900: #CA2D09;
+$secondary-color-700: #F14419;
+$secondary-color-600: #FF4C1E;
+$secondary-color-300: #FF8965;
+$secondary-color-100: #FFCCBC;
+$secondary-color-50: #FFF1F0;
+
+//Neutral
+//Neutral colors are used as supporting secondary colors in text, backgrounds, seperators, etc — are usually gray.
+$neutral-color-900: #111827;
+$neutral-color-800: #1F2937;
+$neutral-color-700: #374151;
+$neutral-color-600: #4B5563;
+$neutral-color-500: #6B7280;
+$neutral-color-400: #9CA3AF;
+$neutral-color-300: #D1D5DB;
+$neutral-color-200: #E5E7EB;
+$neutral-color-100: #F3F4F6;
+$neutral-color-50: #F9FAFB;
+
+//Accent
+//Accent colors are used as supporting colors in backgrounds — are usually pastel shades.
+$accent-color-1: #E2F1FF;
+$accent-color-2: #FFE1F1;
+$accent-color-3: #FFF3E1;
+$accent-color-4: #F1E4FD;
+$accent-color-5: #C1E5C0;
+$accent-color-6: #FDD9D9;
+
+//Semantic
+//These are the colors that communicate purpose. They help users convey messages
+$semantic-color-success: #00AB56;
+$Semantic-color-error: #FF424F;

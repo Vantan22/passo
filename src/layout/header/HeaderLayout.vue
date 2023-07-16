@@ -38,13 +38,12 @@ export default {
 nav {
   display: flex;
   justify-content: space-between;
-  width: auto;
   min-height: 128px;
-  max-width: 1280px;
+  width: 1280px;
   margin: 0 auto;
-  padding: 40px 112px;
-  align-items: flex-start;
+  align-items: center;
   backdrop-filter: blur(8px);
+  position: sticky;
 
   a {
     font-weight: bold;
