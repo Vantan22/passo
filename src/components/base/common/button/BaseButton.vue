@@ -33,8 +33,8 @@ export default {
 <template>
   <div class="base-button" @click="onClickButton">
     <div
-        :class="['base-button-inner', { active: isActive }]"
-        :style="{ fontWeight: fontWeight }"
+      :class="['base-button-inner', { active: isActive }]"
+      :style="{ fontWeight: fontWeight }"
     >
       {{ buttonName }}
     </div>
