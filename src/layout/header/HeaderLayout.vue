@@ -30,7 +30,7 @@ export default {
       <router-link to="/san-pham">Sản Phẩm</router-link>
       <router-link to="/lien-he">Liên Hệ</router-link>
     </div>
-    <base-button-primary :buttonName="buttonMenuName" />
+    <base-button-primary :buttonName="$t('message')" />
   </nav>
 </template>
 

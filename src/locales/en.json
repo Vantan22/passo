@@ -1,0 +1,25 @@
+{
+  "message": "day la tieng anh",
+  "menu": [
+    {
+      "name": "Trang Chủ",
+      "direct": "/"
+    },
+    {
+      "name": "Giới Thiệu",
+      "direct": "/about"
+    },
+    {
+      "name": "Dịch Vụ",
+      "direct": "/about"
+    },
+    {
+      "name": "Sản Phẩm",
+      "direct": "/product"
+    },
+    {
+      "name": "Liên Hệ",
+      "direct": "/contact"
+    }
+  ]
+}
