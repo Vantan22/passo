@@ -1,59 +1,104 @@
+<template>
+  <div class="header" :class="PrimaryColor ? 'primary-color' : ''">
+    <nav class="navigation">
+      <router-link to="/" class="logo">
+        <img :src="LogoDefault" alt=""/>
+        <span>Passo</span>
+        <div>TM</div>
+      </router-link>
+      <div class="navigation-menu">
+        <router-link
+            to="/"
+            @click="onChangeMenu(false)"
+            :class="['menu-text', { 'primary-color': PrimaryColor }]"
+        >{{ $t("home_page.menu.menu_home") }}
+        </router-link>
+        <router-link
+            to="/about"
+            @click="onChangeMenu(true)"
+            :class="['menu-text', { 'primary-color': PrimaryColor }]"
+        >{{ $t("home_page.menu.menu_about") }}
+        </router-link>
+        <router-link
+            to="/service"
+            @click="onChangeMenu(true)"
+            :class="['menu-text', { 'primary-color': PrimaryColor }]"
+        >{{ $t("home_page.menu.menu_service") }}
+        </router-link>
+        <router-link
+            to="/product"
+            @click="onChangeMenu(true)"
+            :class="['menu-text', { 'primary-color': PrimaryColor }]"
+        >{{ $t("home_page.menu.menu_product") }}
+        </router-link>
+        <router-link
+            to="/contact"
+            @click="onChangeMenu(false)"
+            :class="['menu-text', { 'primary-color': PrimaryColor }]"
+        >{{ $t("home_page.menu.menu_contact") }}
+        </router-link>
+      </div>
+      <base-button-primary
+          :buttonName="$t('home_page.menu.button_title_contact')"
+      />
+    </nav>
+  </div>
+</template>
+
 <script>
 import BaseButtonPrimary from "@/components/base/common/button/BaseButtonPrimary.vue";
 
 export default {
-  setup: function () {
+  data() {
     return {
       LogoDefault: require("@/assets/logo/Color=Default.svg"),
-      isMenuActive: null,
-      buttonMenuName: "Giới Thiệu Ngay",
+      PrimaryColor: false,
     };
   },
   components: {
     BaseButtonPrimary,
   },
-  methods: {},
+  methods: {
+    onChangeMenu(menuTYPE) {
+      this.PrimaryColor = menuTYPE;
+    },
+  },
 };
 </script>
-
-<template>
-  <nav class="header-menu">
-    <router-link to="/" class="logo">
-      <img :src="LogoDefault" alt="" />
-      <span>Passo</span>
-      <div>TM</div>
-    </router-link>
-    <div class="navigation-menu">
-      <router-link to="/">Trang Chủ</router-link>
-      <router-link to="/gioi-thieu">Giới Thiệu</router-link>
-      <router-link to="/dich-vu">Dịch Vụ</router-link>
-      <router-link to="/san-pham">Sản Phẩm</router-link>
-      <router-link to="/lien-he">Liên Hệ</router-link>
-    </div>
-    <base-button-primary :buttonName="$t('message')" />
-  </nav>
-</template>
-
 <style scoped lang="scss">
-nav {
+.header.primary-color {
+  background: #2d2382;
+  width: 100vw;
+  min-height: 128px;
+  position: fixed;
+}
+
+.navigation {
   display: flex;
   justify-content: space-between;
   min-height: 128px;
-  width: 1280px;
-  margin: 0 auto;
+  max-width: 1280px;
   align-items: center;
   backdrop-filter: blur(8px);
-  position: sticky;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 20px;
 
-  a {
+  .menu-text {
     font-weight: bold;
-    color: #2c3e50;
+    color: #111827;
     text-decoration: none;
+  }
+
+  .menu-text.primary-color {
+    color: white;
   }
 
   .logo {
     display: flex;
-    margin-right: 60px;
+    text-decoration: none;
+    //margin-right: 60px;
 
     img {
       margin-right: 4px;
@@ -92,11 +137,14 @@ nav {
       font-style: normal;
       font-weight: 600;
       line-height: 24px;
+      text-decoration: none;
     }
 
     a.router-link-exact-active {
-      color: #42b983;
+      color: #ff4c1e;
     }
   }
 }
+
+
 </style>

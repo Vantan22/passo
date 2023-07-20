@@ -1,12 +1,12 @@
 {
   "home_page": {
     "menu": {
-      "menu_home": "Home",
-      "menu_about": "About",
-      "menu_service": "Service",
-      "menu_product": "Product",
-      "menu_contact": "Contact",
-      "button_title_contact": "Contact now"
+      "menu_home": "Trang chủ",
+      "menu_about": "Giới thiệu",
+      "menu_service": "Dịch vụ",
+      "menu_product": "Sản Phẩm",
+      "menu_contact": "Liên hệ",
+      "button_title_contact": "Liên hệ ngay"
     },
     "banner": {
       "section_title": "Thiết kế gian hàng cho sàn thương mại điện tử Shopee, Tiki, Lazada, ...",

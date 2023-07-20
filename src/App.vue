@@ -8,6 +8,11 @@ export default {
   components: {
     HeaderLayout,
   },
+  setup() {},
+  created() {
+    console.log(navigator.language);
+  },
+  methods: {},
 };
 </script>
 <style>
