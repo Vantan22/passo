@@ -41,3 +41,21 @@ $accent-color-6: #FDD9D9;
 //These are the colors that communicate purpose. They help users convey messages
 $semantic-color-success: #00AB56;
 $Semantic-color-error: #FF424F;
+
+// color logo
+$text-color-logo-black: #000;
+$text-color-logo-white: #FFF;
+
+
+
+//mixin
+@mixin text-config($size, $f-weight, $l-height) {
+  font-size: $size;
+  font-weight: $f-weight;
+  line-height: $l-height;
+}
+
+@mixin flex-gap-col($col) {
+  display: flex;
+  column-gap: $col;
+}
