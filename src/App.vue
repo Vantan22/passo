@@ -23,4 +23,12 @@ export default {
   color: #2c3e50;
   font-family: "Inter", sans-serif;
 }
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+a {
+  text-decoration: none;
+}
 </style>
