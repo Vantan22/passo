@@ -1,18 +1,19 @@
 <template>
-  <header-layout></header-layout>
+  <header-layout />
+  <content-view />
+  <footer-layout />
 </template>
 <script>
 import HeaderLayout from "@/layout/header/HeaderLayout.vue";
+import FooterLayout from "@/layout/footer/FooterLayout.vue";
+import ContentView from "@/layout/content/ContentView.vue";
 
 export default {
   components: {
+    ContentView,
+    FooterLayout,
     HeaderLayout,
   },
-  setup() {},
-  created() {
-    console.log(navigator.language);
-  },
-  methods: {},
 };
 </script>
 <style>
@@ -20,14 +21,15 @@ export default {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  color: #2c3e50;
   font-family: "Inter", sans-serif;
 }
-body {
+
+#app {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
+
 a {
   text-decoration: none;
 }

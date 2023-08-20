@@ -46,16 +46,32 @@ $Semantic-color-error: #FF424F;
 $text-color-logo-black: #000;
 $text-color-logo-white: #FFF;
 
+//background
+$bg-black: #000000;
 
 
 //mixin
-@mixin text-config($size, $f-weight, $l-height) {
+@mixin text-config($size, $f-weight, $l-height, $color:$text-color-logo-white) {
   font-size: $size;
   font-weight: $f-weight;
   line-height: $l-height;
+  color: $color;
 }
 
 @mixin flex-gap-col($col) {
   display: flex;
   column-gap: $col;
+}
+
+@mixin flex-gap($col:0,$row:0,$direction:row) {
+  display: flex;
+  flex-direction: $direction;
+  column-gap: $col;
+  row-gap: $row;
+}
+
+@mixin img($width:auto, $height:auto) {
+  width: $width;
+  height: $height;
+  object-fit: cover;
 }
