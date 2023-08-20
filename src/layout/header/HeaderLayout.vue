@@ -1,62 +1,87 @@
 <template>
-  <div class="header" :class="PrimaryColor ? 'primary-color' : ''">
-    <nav class="navigation">
-      <router-link to="/" class="logo">
-        <img :src="LogoDefault" alt=""/>
-        <span>Passo</span>
-        <div>TM</div>
-      </router-link>
-      <div class="navigation-menu">
-        <router-link
-            to="/"
-            @click="onChangeMenu(false)"
-            :class="['menu-text', { 'primary-color': PrimaryColor }]"
-        >{{ $t("home_page.menu.menu_home") }}
-        </router-link>
-        <router-link
-            to="/about"
-            @click="onChangeMenu(true)"
-            :class="['menu-text', { 'primary-color': PrimaryColor }]"
-        >{{ $t("home_page.menu.menu_about") }}
-        </router-link>
-        <router-link
-            to="/service"
-            @click="onChangeMenu(true)"
-            :class="['menu-text', { 'primary-color': PrimaryColor }]"
-        >{{ $t("home_page.menu.menu_service") }}
-        </router-link>
-        <router-link
-            to="/product"
-            @click="onChangeMenu(true)"
-            :class="['menu-text', { 'primary-color': PrimaryColor }]"
-        >{{ $t("home_page.menu.menu_product") }}
-        </router-link>
-        <router-link
-            to="/contact"
-            @click="onChangeMenu(false)"
-            :class="['menu-text', { 'primary-color': PrimaryColor }]"
-        >{{ $t("home_page.menu.menu_contact") }}
-        </router-link>
+  <div class="header" :class="['header', { 'primary-color': PrimaryColor }]">
+    <passo-wrapper-basic padding="40px 112px">
+      <div class="header__wrapper">
+        <div class="header__menu">
+          <router-link class="header__menu__logo" to="#" alt="Logo Passo">
+            <img :src="defaultLogo" alt="" class="header__menu__logo__image" />
+            <div class="header__menu__logo__brand-name">
+              <div
+                class="header__menu__logo__brand-name__text"
+                :style="{ color: isChangeWithPrimaryColor }"
+              >
+                Passo
+              </div>
+              <div
+                class="header__menu__logo__brand-name__trade-mark"
+                :style="{ color: isChangeWithPrimaryColor }"
+              >
+                TM
+              </div>
+            </div>
+          </router-link>
+          <nav
+            class="header__menu__navigation"
+            :class="{ 'primary-color': PrimaryColor }"
+          >
+            <router-link
+              @click="onChangeMenu(false)"
+              class="header__menu__navigation__item"
+              to="/"
+              >Trang chủ
+            </router-link>
+            <router-link
+              @click="onChangeMenu(true)"
+              class="header__menu__navigation__item"
+              to="/about"
+              >Giới thiệu
+            </router-link>
+            <router-link
+              @click="onChangeMenu(true)"
+              class="header__menu__navigation__item"
+              to="/service"
+              >Dịch vụ
+            </router-link>
+            <router-link
+              @click="onChangeMenu(true)"
+              class="header__menu__navigation__item"
+              to="/product"
+              >Sản phẩm
+            </router-link>
+            <router-link
+              @click="onChangeMenu(false)"
+              class="header__menu__navigation__item"
+              to="/contact"
+              >Liên hệ
+            </router-link>
+          </nav>
+        </div>
+        <base-button-primary button-name="Liên hệ ngay" />
       </div>
-      <base-button-primary
-          :buttonName="$t('home_page.menu.button_title_contact')"
-      />
-    </nav>
+    </passo-wrapper-basic>
   </div>
 </template>
 
 <script>
+import PassoWrapperBasic from "@/components/base/common/PassoWapperBasic.vue";
+import defaultLogo from "@/assets/logo/default_logo.svg";
 import BaseButtonPrimary from "@/components/base/common/button/BaseButtonPrimary.vue";
 
 export default {
   data() {
     return {
-      LogoDefault: require("@/assets/logo/Color=Default.svg"),
       PrimaryColor: false,
+      defaultLogo: defaultLogo,
     };
   },
   components: {
     BaseButtonPrimary,
+    PassoWrapperBasic,
+  },
+  computed: {
+    isChangeWithPrimaryColor() {
+      return !this.PrimaryColor ? "#000000" : "#FFFFFF";
+    },
   },
   methods: {
     onChangeMenu(menuTYPE) {
@@ -66,85 +91,72 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-.header.primary-color {
-  background: #2d2382;
-  width: 100vw;
-  min-height: 128px;
-  position: fixed;
-}
+@import "@/assets/common/css/variables_color";
 
-.navigation {
-  display: flex;
-  justify-content: space-between;
-  min-height: 128px;
-  max-width: 1280px;
-  align-items: center;
+.header {
+  width: 100%;
   backdrop-filter: blur(8px);
-  position: fixed;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 0 20px;
 
-  .menu-text {
-    font-weight: bold;
-    color: #111827;
-    text-decoration: none;
+  &.primary-color {
+    background: $primary-color-900;
   }
 
-  .menu-text.primary-color {
-    color: white;
-  }
-
-  .logo {
+  .header__wrapper {
     display: flex;
-    text-decoration: none;
-    //margin-right: 60px;
+    align-items: center;
+    justify-content: space-between;
 
-    img {
-      margin-right: 4px;
-    }
+    .header__menu {
+      @include flex-gap-col(60px);
 
-    span {
-      // Passo
-      color: black;
-      font-size: 24px;
-      font-weight: 700;
-      line-height: 32px;
-      word-wrap: break-word;
-    }
+      &__logo {
+        @include flex-gap-col(4px);
+        &__image {
+          width: 32px;
+          height: 32px;
+          object-fit: cover;
+        }
 
-    div {
-      color: black;
-      font-size: 6px;
-      font-weight: 700;
-      line-height: 12px;
-      word-wrap: break-word;
-    }
-  }
+        &__brand-name {
+          display: flex;
+          align-items: flex-start;
 
-  .navigation-menu {
-    display: flex;
-    gap: 8px;
+          &__text {
+            @include text-config(24px, 700, 32px);
+          }
 
-    a {
-      display: flex;
-      padding: 12px 20px;
-      justify-content: center;
-      align-items: center;
-      gap: 8px;
-      text-align: center;
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 600;
-      line-height: 24px;
-      text-decoration: none;
-    }
+          &__trade-mark {
+            @include text-config(6px, 700, 12px);
+          }
+          &.primary-color {
+          }
+        }
+      }
 
-    a.router-link-exact-active {
-      color: #ff4c1e;
+      &__navigation {
+        @include flex-gap-col(8px);
+
+        &__item {
+          @include text-config(16px, 600, 24px);
+          padding: 12px 20px;
+          color: $neutral-color-900;
+
+          &.router-link-exact-active {
+            color: $secondary-color-600;
+          }
+        }
+
+        &.primary-color {
+          .header__menu__navigation__item {
+            color: $text-color-logo-white;
+
+            &.router-link-exact-active {
+              color: $secondary-color-600;
+            }
+          }
+        }
+      }
     }
   }
 }
-
-
 </style>
