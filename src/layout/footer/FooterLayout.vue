@@ -49,15 +49,21 @@
               <router-link to="/about" class="footer__content__menu__left__link"
                 >Giới thiệu
               </router-link>
-              <router-link to="/service" class="footer__content__menu__left__link"
+              <router-link
+                to="/service"
+                class="footer__content__menu__left__link"
                 >Dịch vụ
               </router-link>
             </div>
             <div class="footer__content__menu__right">
-              <router-link to="/product" class="footer__content__menu__right__link"
+              <router-link
+                to="/product"
+                class="footer__content__menu__right__link"
                 >Dự án
               </router-link>
-              <router-link to="/contact" class="footer__content__menu__right__link"
+              <router-link
+                to="/contact"
+                class="footer__content__menu__right__link"
                 >Liên hệ
               </router-link>
             </div>
