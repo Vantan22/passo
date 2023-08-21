@@ -1,9 +1,15 @@
 <template>
-  <div class="home"></div>
+  <div class="home">
+    <hero-banner />
+  </div>
 </template>
 
 <script>
-export default {};
+import HeroBanner from "@/views/home/component/HeroBanner.vue";
+
+export default {
+  components: { HeroBanner },
+};
 </script>
 
 <style lang="scss" scoped></style>
