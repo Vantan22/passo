@@ -44,6 +44,9 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/common/css/variables_color";
 .banner {
+  background: url("@/assets/home-background.png") no-repeat;
+  background-size: cover;
+  width: 100%;
   .banner__content {
     @include flex-gap(32px);
     align-items: center;
