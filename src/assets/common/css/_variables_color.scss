@@ -70,8 +70,8 @@ $bg-black: #000000;
   row-gap: $row;
 }
 
-@mixin img($width:auto, $height:auto) {
+@mixin img($width:auto, $height:auto,$o-fit:cover) {
   width: $width;
   height: $height;
-  object-fit: cover;
+  object-fit: $o-fit;
 }

@@ -56,7 +56,10 @@
             </router-link>
           </nav>
         </div>
-        <base-button-primary button-name="Liên hệ ngay" />
+        <base-button-primary
+          button-name="Liên hệ ngay"
+          @clicked="() => $router.push('/about')"
+        />
       </div>
     </passo-wrapper-basic>
   </div>
