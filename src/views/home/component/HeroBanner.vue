@@ -12,7 +12,10 @@
               >Không chỉ là ấn phẩm thiết kế, Passo mang đến sự sáng tạo, đột
               phá và đổi mới trong từng sản phẩm.</span
             >
-            <base-button-primary button-name="Liên hệ ngay" />
+            <base-button-primary
+              button-name="Liên hệ ngay"
+              @clicked="() => $router.push('/contact')"
+            />
           </div>
         </div>
         <div class="banner__content__pic">

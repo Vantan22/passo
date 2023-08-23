@@ -1,28 +1,26 @@
 <template>
-  <passo-base-section id-section="about" col-gap="40px" class="about">
+  <passo-base-section id-section="service" col-gap="40px" class="service">
     <template v-slot:left>
-      <div class="about__info">
-        <div class="about__info__section-title">
-          <div class="about__info__section-title__text">ABOUT US</div>
-          <div class="about__info__section-title__content">
-            Chúng tôi là ai?
-          </div>
-        </div>
-        <div class="about__info__description">
-          Passo được thành lập năm 2020 với đội ngũ nhân sự nhiều năm kinh
-          nghiệm trong lĩnh vực thiết kế. Chúng tôi tin rằng sự sáng tạo trong
-          thiết kế sẽ góp phần quan trọng trong việc thu hút khách hàng của bạn
-          từ những ấn tượng đầu tiên.
-        </div>
-        <passo-button-text-with-circle-icon
-          content="Xem thêm"
-          @clicked="() => $router.push('/about')"
-        />
+      <div class="service__pic">
+        <img :src="serviceImage" alt="service__pic" class="service__pic__img" />
       </div>
     </template>
     <template v-slot:right>
-      <div class="about__pic">
-        <img :src="aboutUsImage" alt="about__pic" class="about__pic__img" />
+      <div class="service__info">
+        <div class="service__info__section-title">
+          <div class="service__info__section-title__text">SERVICES</div>
+          <div class="service__info__section-title__content">Dịch vụ</div>
+        </div>
+        <pre class="service__info__description">
+Chúng tôi cung cấp dịch vụ
+
+• Thiết kế sàn thương mại điện tử Shopee, Lazada, Tiki, Sendo...
+• Thiết kế website thương mại theo yêu cầu
+        </pre>
+        <passo-button-text-with-circle-icon
+          content="Xem thêm"
+          @clicked="() => $router.push('/service')"
+        />
       </div>
     </template>
   </passo-base-section>
@@ -30,14 +28,13 @@
 
 <script>
 import PassoBaseSection from "@/views/home/component/PassoBaseSection.vue";
-import aboutUsImage from "@/assets/pic_home/about_us.svg";
+import serviceImage from "@/assets/pic_home/service.svg";
 import PassoButtonTextWithCircleIcon from "@/components/base/common/button/PassoButtonTextWithCircleIcon.vue";
-
 export default {
   components: { PassoButtonTextWithCircleIcon, PassoBaseSection },
   data() {
     return {
-      aboutUsImage: aboutUsImage,
+      serviceImage: serviceImage,
     };
   },
 };
@@ -45,12 +42,12 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/assets/common/css/variables_color";
-
-.about {
-  .about__info {
+.service {
+  &__pic {
+  }
+  .service__info {
     @include flex-gap(0, 32px, column);
     align-items: flex-start;
-
     &__section-title {
       &__text {
         @include text-config(16px, 600, 24px, $primary-color-600);

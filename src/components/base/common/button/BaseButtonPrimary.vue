@@ -24,7 +24,7 @@ export default {
   },
   methods: {
     onClickButton() {
-      this.$emit("button-clicked", this.id);
+      this.$emit("clicked", this.id);
     },
   },
 };
@@ -58,10 +58,6 @@ export default {
     font-weight: 600;
     line-height: 20px; /* 142.857% */
     user-select: none;
-  }
-
-  .base-button-primary-inner . active {
-    color: #ff0000;
   }
 }
 </style>
