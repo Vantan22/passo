@@ -3,7 +3,7 @@
 - [ ] bug report
 - [ ] feature request
 ## Member
-@vantan22
+@Vantan22
 
 ## What is the current behavior?
 
