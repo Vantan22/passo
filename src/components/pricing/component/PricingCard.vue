@@ -42,6 +42,10 @@ export default {
       type: [Object, Array],
       require: true,
     },
+    active: {
+      type: Boolean,
+      require: true,
+    },
   },
 };
 </script>
