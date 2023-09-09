@@ -1,11 +1,11 @@
 <template>
-  <div class="passo-divider" :style="padding"></div>
+  <div class="passo-divider" :style="{ margin: margin }"></div>
 </template>
 
 <script>
 export default {
   props: {
-    padding: {
+    margin: {
       type: String,
       default: "0 32px",
     },

@@ -1,14 +1,16 @@
 <template>
   <passo-wrapper-basic>
-    <pricing-card
-      v-for="card in cards"
-      :key="card.type"
-      :card-type="card.type"
-      :card-cost="card.price"
-      :for-brand="card.desc"
-      :card-list-items="card.cardListItems"
-      :active="card.active"
-    />
+    <div class="pricing">
+      <pricing-card
+        v-for="card in cards"
+        :key="card.type"
+        :card-type="card.type"
+        :card-cost="card.price"
+        :for-brand="card.desc"
+        :card-list-items="card.cardListItems"
+        :active="card.active"
+      />
+    </div>
   </passo-wrapper-basic>
 </template>
 
@@ -27,4 +29,9 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.pricing {
+  display: flex;
+  justify-content: space-between;
+}
+</style>

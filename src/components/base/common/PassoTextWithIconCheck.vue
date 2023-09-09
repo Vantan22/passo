@@ -1,7 +1,7 @@
 <template>
   <div class="passo-text-with-icon-check">
     <img :src="isIconShow" alt="" class="passo-text-with-icon-check__icon" />
-    <div class="passo-text-with-icon-check__content">{{ content }}</div>
+    <div class="passo-text-with-icon-check__content" v-html="content"></div>
   </div>
 </template>
 

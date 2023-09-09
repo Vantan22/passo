@@ -23,7 +23,7 @@ export default createStore({
           },
           {
             interest: false,
-            content: "Quà tặng: Không có",
+            content: `<strong>Quà tặng:</strong> Không có`,
           },
           {
             interest: false,
@@ -51,9 +51,7 @@ export default createStore({
           },
           {
             interest: true,
-            content: `${(
-              <b>Quà tặng:</b>
-            )} Tặng 1 khung sản phẩm và hướng dẫn sử dụng phần mềm chèn ảnh canva`,
+            content: `<strong>Quà tặng:</strong> Tặng 1 khung sản phẩm và hướng dẫn sử dụng phần mềm chèn ảnh canva`,
           },
 
           {
@@ -82,9 +80,7 @@ export default createStore({
           },
           {
             interest: true,
-            content: `${(
-              <b>Quà tặng:</b>
-            )} Tặng 2 khung sản phẩm và hướng dẫn sử dụng phần mềm chèn ảnh canva`,
+            content: `<strong>Quà tặng:</strong> Tặng 2 khung sản phẩm và hướng dẫn sử dụng phần mềm chèn ảnh canva`,
           },
           {
             interest: true,
