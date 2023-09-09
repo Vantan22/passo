@@ -7,11 +7,11 @@
           :class="{ 'pricing-card__prefix__header__type--active': active }"
         >
           <div
-            v-if="id === 1 && active"
+            v-if="active && cardType === 'TIÊU CHUẨN'"
             class="pricing-card__prefix__header__type__icon--active"
           ></div>
           <div
-            v-else-if="id === 1"
+            v-else-if="active"
             class="pricing-card__prefix__header__type__icon"
           ></div>
           <div class="pricing-card__prefix__header__type__content">
@@ -38,13 +38,14 @@
       </div>
     </div>
     <div class="pricing-card__suffix">
-      <button-white-full-width
+      <base-button
         :is-active="active"
         buttonName="Liên hệ ngay"
         @clicked="onClickButton"
       />
-      <button-text-with-arrow
-        buttonName="Xem sản phẩm gói này"
+      <base-button
+        :is-active="active"
+        buttonName="Liên hệ ngay"
         @clicked="onClickButton"
       />
     </div>
@@ -53,17 +54,11 @@
 
 <script>
 import PassoDivider from "@/components/base/common/PassoDivider.vue";
-import ButtonWhiteFullWidth from "@/components/base/common/button/ButtonWhiteFullWidth.vue";
-import ButtonTextWithArrow from "@/components/base/common/button/ButtonTextWithArrow.vue";
 import PassoTextWithIconCheck from "@/components/base/common/PassoTextWithIconCheck.vue";
+import BaseButton from "@/components/base/common/button/BaseButton.vue";
 
 export default {
-  components: {
-    ButtonTextWithArrow,
-    ButtonWhiteFullWidth,
-    PassoTextWithIconCheck,
-    PassoDivider,
-  },
+  components: { BaseButton, PassoTextWithIconCheck, PassoDivider },
   props: {
     cardType: {
       type: String,
@@ -85,14 +80,10 @@ export default {
       type: Boolean,
       require: true,
     },
-    id: {
-      type: Number,
-      require: true,
-    },
   },
   methods: {
     onClickButton() {
-      this.$emit("clicked", this.id);
+      this.$emit("clicked");
     },
   },
 };
@@ -110,7 +101,6 @@ export default {
   border: 2px solid $neutral-color-200;
   width: max-content;
   height: 624px;
-
   &__prefix {
     display: flex;
     flex-direction: column;
@@ -125,13 +115,11 @@ export default {
         display: flex;
         column-gap: 4px;
         border-radius: 8px;
-
         &__icon {
           height: 20px;
           width: 20px;
           background: url("@/assets/icon/ic_live_area_grey.svg") no-repeat;
         }
-
         &__icon--active {
           height: 20px;
           width: 20px;
@@ -142,15 +130,12 @@ export default {
           @include text-config(14px, 700, 20px, $neutral-color-600);
         }
       }
-
       &__type--active {
         background: $secondary-color-50;
-
         .pricing-card__prefix__header__type__content {
           color: $secondary-color-600;
         }
       }
-
       &__price {
         @include flex-gap(0, 12px, column);
 
@@ -170,17 +155,14 @@ export default {
         }
       }
     }
-
     &__content {
       @include flex-gap(0, 12px, column);
       justify-items: flex-start;
     }
   }
-
   &__suffix {
     display: flex;
     flex-direction: column;
-    row-gap: 24px;
   }
 }
 </style>

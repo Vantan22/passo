@@ -3,14 +3,12 @@
     <div class="pricing">
       <pricing-card
         v-for="card in cards"
-        :key="card.id"
-        :id="card.id"
+        :key="card.type"
         :card-type="card.type"
         :card-cost="card.price"
         :for-brand="card.desc"
         :card-list-items="card.cardListItems"
         :active="card.active"
-        @clicked="$emit('changeCard', $event)"
       />
     </div>
   </passo-wrapper-basic>
