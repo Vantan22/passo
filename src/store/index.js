@@ -4,6 +4,7 @@ export default createStore({
   state: {
     cards: [
       {
+        id: 0,
         type: "CƠ BẢN",
         price: "700.000",
         desc: "Dành cho shop nhỏ",
@@ -32,6 +33,7 @@ export default createStore({
         ],
       },
       {
+        id: 1,
         type: "TIÊU CHUẨN",
         price: "1.000.000",
         desc: "Dành cho shop vừa và nhỏ",
@@ -61,6 +63,7 @@ export default createStore({
         ],
       },
       {
+        id: 2,
         type: "CHUYÊN NGHIỆP",
         price: "3.000.000",
         desc: "Dành cho shop thương hiệu",
@@ -91,7 +94,13 @@ export default createStore({
     ],
   },
   getters: {},
-  mutations: {},
+  mutations: {
+    changeCard(state, payload) {
+      state.cards.forEach((card) => {
+        card.active = card.id === payload;
+      });
+    },
+  },
   actions: {},
   modules: {},
 });
