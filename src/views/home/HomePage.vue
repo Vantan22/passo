@@ -6,6 +6,7 @@
     <pricing-section :cards="dataCard" @changeCard="changeCard" />
     <our-clients />
     <feature-project />
+    <how-to-make-it />
   </div>
 </template>
 
@@ -16,9 +17,11 @@ import ServiceSection from "@/views/home/component/ServiceSection.vue";
 import PricingSection from "@/components/pricing/Pricing.vue";
 import OurClients from "@/components/our_clients/OurClients.vue";
 import FeatureProject from "@/components/featured_project/FeatureProject.vue";
+import HowToMakeIt from "@/views/home/component/HowToMakeIt.vue";
 
 export default {
   components: {
+    HowToMakeIt,
     FeatureProject,
     OurClients,
     PricingSection,
